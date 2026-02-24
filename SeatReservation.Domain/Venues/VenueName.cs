@@ -4,9 +4,9 @@ using Shared.Constants;
 
 namespace SeatReservation.Domain.Venues;
 
+// ValueObject
 public record VenueName
 {
-    // ValueObject without setters
     private VenueName(string prefix, string name)
     {
         Prefix = prefix;
@@ -16,6 +16,7 @@ public record VenueName
     public string Name { get; }
 
     public override string ToString() => $"{Prefix}-{Name}";
+
     public static Result<VenueName, Error> Create(string prefix, string name)
     {
         if (string.IsNullOrEmpty(prefix) || string.IsNullOrEmpty(name))
