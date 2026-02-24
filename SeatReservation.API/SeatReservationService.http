@@ -4,3 +4,15 @@ GET {{SeatReservationService_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+@Host = http://localhost:5290
+
+POST {{Host}}/users
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+    "Link": "Test2",
+    "Name": "2"
+  }
+]
